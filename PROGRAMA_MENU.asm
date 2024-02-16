@@ -1,0 +1,72 @@
+#SimuProc 1.4.2.0
+; RICARDO MUÑOZ BOLAÑOS
+; 21331272
+MSG PROGRAMA CON MENÚ
+MSG 1) SUMA
+MSG 2) RESTA
+MSG 3) MULTIPLICACIÓN
+MSG 4) DIVISIÓN
+LDT ELIGE UNA OPCIÓN
+CMP 01A
+JEQ MEM
+CMP 01B
+JEQ MEM
+CMP 01C
+JEQ MEM
+CMP 01D
+JEQ MEM
+JMP MEM
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+MSG USTED ELIGIÓ SUMA
+MSG DAME EL PRIMER NÚMERO
+IN AX,1
+STF 01E
+MSG DAME EL SEGUNDO NÚMERO
+ADDF 01E
+MSG EL RESULTADO ES
+OUT 1,AX
+JMP MEM
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+MSG USTED ELIGIÓ RESTA
+MSG DAME EL PRIMER NÚMERO
+IN AX,1
+STF 01E
+MSG DAME EL SEGUNDO NÚMERO
+SUBF 01E
+MSG EL RESULTADO ES
+OUT 1,AX
+JMP MEM
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+MSG USTED ELIGIÓ MULTIPLICACIÓN
+MSG DAME EL PRIMER NÚMERO
+IN AX,1
+STF 01E
+MSG DAME EL SEGUNDO NÚMERO
+MULF 01E
+MSG EL RESULTADO ES
+OUT 1,AX
+JMP MEM
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+MSG USTED ELIGIÓ DIVISIÓN
+MSG DAME EL PRIMER NÚMERO
+IN AX,1
+STF 01E
+MSG DAME EL SEGUNDO NÚMERO
+DIVF 01E
+MSG EL RESULTADO ES
+OUT 1,AX
+JMP MEM
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+MSG GRACIAS POR USAR EL PROGRAMA :)
+HLT
+#01A
+0001
+#01B
+0010
+#01C
+0011
+#01D
+0100
+; GUARDA UN NÚMERO ENTERO EN AX
+;
+
