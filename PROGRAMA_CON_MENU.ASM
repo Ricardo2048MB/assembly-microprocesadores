@@ -7,70 +7,76 @@ MSG 2) RESTA
 MSG 3) MULTIPLICACIÓN
 MSG 4) DIVISIÓN
 LDT ELIGE UNA OPCIÓN
-CMP 3A
+CMP 40
 JEQ 0F
-CMP 3B
+CMP 41
 JEQ 19
-CMP 3C
-JEQ 23
-CMP 3D
-JEQ 2D
-JMP 37
+CMP 42
+JEQ 26
+CMP 43
+JEQ 30
+JMP 3D
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 MSG USTED ELIGIÓ SUMA
 MSG DAME EL PRIMER NÚMERO
 IN AX,1
-STF 3E
+STF 44
 MSG DAME EL SEGUNDO NÚMERO
 IN AX,1
-ADDF 3E
+ADDF 44
 MSG EL RESULTADO ES
 OUT 1,AX
-JMP 38
+JMP 3E
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 MSG USTED ELIGIÓ RESTA
 MSG DAME EL PRIMER NÚMERO
 IN AX,1
-STF 3E
+STF 44
 MSG DAME EL SEGUNDO NÚMERO
 IN AX,1
-SUBF 3E
+STF 46
+MOV BX,44
+MOV AX,45
+SUBF 46
 MSG EL RESULTADO ES
 OUT 1,AX
-JMP 38
+JMP 3E
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 MSG USTED ELIGIÓ MULTIPLICACIÓN
 MSG DAME EL PRIMER NÚMERO
 IN AX,1
-STF 3E
+STF 44
 MSG DAME EL SEGUNDO NÚMERO
 IN AX,1
-MULF 3E
+MULF 44
 MSG EL RESULTADO ES
 OUT 1,AX
-JMP 38
+JMP 3E
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 MSG USTED ELIGIÓ DIVISIÓN
 MSG DAME EL PRIMER NÚMERO
 IN AX,1
-STF 3E
+STF 44
 MSG DAME EL SEGUNDO NÚMERO
 IN AX,1
-DIVF 3E
+STF 46
+MOV BX,44
+MOV AX,45
+DIVF 46
 MSG EL RESULTADO ES
 OUT 1,AX
-JMP 38
+JMP 3E
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 MSG OPCIÓN EQUIVOCADA
 MSG GRACIAS POR USAR EL PROGRAMA :)
 HLT
-#03A
+#40
 0001
-#03B
+#41
 0010
-#03C
+#42
 0011
-#03D
+#43
 0100
 ; GUARDA UN NÚMERO ENTERO EN AX
 ; 34h
